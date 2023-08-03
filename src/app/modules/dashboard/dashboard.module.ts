@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { ChartModule } from 'primeng/chart';
 
 import { DashboardHomeComponent } from './page/dashboard-home/dashboard-home.component';
 import { RouterModule } from '@angular/router';
@@ -27,7 +28,8 @@ import { CookieService } from 'ngx-cookie-service';
     ButtonModule,
     ToolbarModule,
     CardModule,
-    ToastModule
+    ToastModule,
+    ChartModule
   ],
   providers: [MessageService, CookieService],
 })
