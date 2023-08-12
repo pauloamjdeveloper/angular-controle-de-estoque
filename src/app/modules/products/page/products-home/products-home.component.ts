@@ -13,7 +13,7 @@ import { ProductsDataTransferService } from 'src/app/shared/services/products/pr
 })
 export class ProductsHomeComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject();
-  private productsData: Array<GetAllProductsResponse> = [];
+  private productsDatas: Array<GetAllProductsResponse> = [];
 
   constructor(
     private productsService: ProductsService,
@@ -23,26 +23,26 @@ export class ProductsHomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.getServiceProductsData();
+    this.getServiceProductsDatas();
   }
 
-  getServiceProductsData() {
-    const productLoader = this.productsDtService.getProductsData();
+  getServiceProductsDatas() {
+    const productLoader = this.productsDtService.getProductsDatas();
 
     if (productLoader.length > 0) {
-      this.productsData = productLoader;
-    }else this.getAPIProductsData();
+      this.productsDatas = productLoader;
+    }else this.getAPIProductsDatas();
   }
 
-  getAPIProductsData() {
+  getAPIProductsDatas() {
     this.productsService
       .getAllProducts()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (response) => {
           if (response.length > 0) {
-            this.productsData = response;
-            console.log('DADOS DE PRODUTOS', this.productsData);
+            this.productsDatas = response;
+            console.log('DADOS DE PRODUTOS', this.productsDatas);
           }
         },
         error: (err) => {

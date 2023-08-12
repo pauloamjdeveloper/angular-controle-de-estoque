@@ -8,16 +8,16 @@ import { GetAllProductsResponse } from 'src/app/models/interfaces/products/respo
 export class ProductsDataTransferService {
   public productsDataEmitter$ =
     new BehaviorSubject<Array<GetAllProductsResponse> | null>(null);
-  public productsData: Array<GetAllProductsResponse> = [];
+  public productsDatas: Array<GetAllProductsResponse> = [];
 
   setProductsData(products: Array<GetAllProductsResponse>): void {
     if (products) {
       this.productsDataEmitter$.next(products);
-      this.getProductsData();
+      this.getProductsDatas();
     }
   }
 
-  getProductsData() {
+  getProductsDatas() {
     this.productsDataEmitter$
       .pipe(
         take(1),
@@ -26,11 +26,11 @@ export class ProductsDataTransferService {
       .subscribe({
         next: (response) => {
           if (response) {
-            this.productsData = response;
+            this.productsDatas = response;
           }
         },
       });
-    return this.productsData;
+    return this.productsDatas;
   }
 
 }

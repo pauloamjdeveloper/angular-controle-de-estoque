@@ -15,7 +15,7 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   public productsList: Array<GetAllProductsResponse> = [];
 
-  public productsChartData!: ChartData;
+  public productsChartDatas!: ChartData;
   public productsChartOptions!: ChartOptions;
 
   constructor(
@@ -25,10 +25,10 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.getProductsData();
+    this.getProductsDatas();
   }
 
-  getProductsData(): void {
+  getProductsDatas(): void {
     this.productsService.getAllProducts()
     .pipe(takeUntil(this.destroy$))
       .subscribe({
@@ -58,7 +58,7 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
       const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
       const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-      this.productsChartData = {
+      this.productsChartDatas = {
         labels: this.productsList.map((element) => element?.name),
         datasets: [
           {
