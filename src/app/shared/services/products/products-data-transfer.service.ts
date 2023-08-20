@@ -10,7 +10,7 @@ export class ProductsDataTransferService {
     new BehaviorSubject<Array<GetAllProductsResponse> | null>(null);
   public productsDatas: Array<GetAllProductsResponse> = [];
 
-  setProductsData(products: Array<GetAllProductsResponse>): void {
+  setProductsDatas(products: Array<GetAllProductsResponse>): void {
     if (products) {
       this.productsDataEmitter$.next(products);
       this.getProductsDatas();
