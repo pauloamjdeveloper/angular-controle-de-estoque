@@ -1,18 +1,18 @@
-import { ProductFormComponent } from './../../components/product-form/product-form.component';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
-import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
-import { GetAllProductsResponse } from 'src/app/models/interfaces/products/response/GetAllProductsResponse';
-import { ProductsService } from 'src/app/services/products/products.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ProductsService } from '../../../../services/products/products.service';
 import { ProductsDataTransferService } from 'src/app/shared/services/products/products-data-transfer.service';
+import { GetAllProductsResponse } from 'src/app/models/interfaces/products/response/GetAllProductsResponse';
+import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ProductFormComponent } from '../../components/product-form/product-form.component';
 
 @Component({
   selector: 'app-products-home',
   templateUrl: './products-home.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class ProductsHomeComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject();
@@ -33,11 +33,11 @@ export class ProductsHomeComponent implements OnInit, OnDestroy {
   }
 
   getServiceProductsDatas() {
-    const productLoader = this.productsDtService.getProductsDatas();
+    const productsLoaded = this.productsDtService.getProductsDatas();
 
-    if (productLoader.length > 0) {
-      this.productsDatas = productLoader;
-    }else this.getAPIProductsDatas();
+    if (productsLoaded.length > 0) {
+      this.productsDatas = productsLoaded;
+    } else this.getAPIProductsDatas();
   }
 
   getAPIProductsDatas() {
@@ -73,14 +73,12 @@ export class ProductsHomeComponent implements OnInit, OnDestroy {
         maximizable: true,
         data: {
           event: event,
-          productsDatas: this.productsDatas,
-        }
+          productDatas: this.productsDatas,
+        },
       });
-      this.ref.onClose
-        .pipe(takeUntil(this.destroy$))
-        .subscribe({
-          next: () => this.getAPIProductsDatas(),
-        });
+      this.ref.onClose.pipe(takeUntil(this.destroy$)).subscribe({
+        next: () => this.getAPIProductsDatas(),
+      });
     }
   }
 
@@ -135,5 +133,4 @@ export class ProductsHomeComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
 }
