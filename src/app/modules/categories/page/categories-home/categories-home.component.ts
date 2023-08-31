@@ -88,9 +88,9 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
               detail: 'Erro ao remover categoria!',
               life: 3000,
             });
-            this.getAllCategories();
           },
         });
+        this.getAllCategories();
     }
   }
 
