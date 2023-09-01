@@ -6,7 +6,7 @@ import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/resp
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriesService {
   private API_URL = environment.API_URL;
@@ -18,7 +18,7 @@ export class CategoriesService {
     }),
   };
 
-  constructor(private http: HttpClient, private cookie: CookieService) { }
+  constructor(private http: HttpClient, private cookie: CookieService) {}
 
   createNewCategory(requestDatas: {
     name: string;
