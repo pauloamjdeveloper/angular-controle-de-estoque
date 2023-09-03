@@ -1,27 +1,52 @@
-# FrontendStockControl
+<h1 align="center">:chart_with_upwards_trend: Stock Control</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## :computer: Projeto
 
-## Development server
+Repositório com uma aplicação web para simular o frontend de um controle de estoque, as funcionalidade implementadas correspodem ao gerenciamento de registros de `Categorias` e `Produtos` usando as operações básicas de um CRUD, assim foi criado um relacionamento de `Um Para Muitos` onde uma `Categoria` pode ter um ou mais `Produtos`, o código fonte do projeto foi baseado no curso [Formação Angular (v15+) - 2023](https://www.udemy.com/course/curso-de-angular-15-do-iniciante-ao-especialista/). 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Além das operações citadas acima outros recursos implementados foram: `Autenticação` e `Autorização` para controle de acesso, uma página com um `Dashboard` para a exibição de um gráfico com os `Produtos` cadastrados e suas respectivas quantidades, a sua integração feita no backend [stock-api](https://github.com/pauloamjdeveloper/stock-api). 
 
-## Code scaffolding
+## ✔️ Recursos Utilizados
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ``Angular CLI v16.1.4``
+- ``Angular Core v16.1.0``
+- ``Angular Forms v16.1.0``
+- ``Angular Router v16.1.0``
+- ``TypeScript v5.1.3``
+- ``PrimeNG v16.1.0``
+- ``Chart.js v4.3.3``
 
-## Build
+## :floppy_disk: Clonar Repositório
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```git clone https://github.com/pauloamjdeveloper/angular-controle-de-estoque.git```
 
-## Running unit tests
+`Observação` : na pasta principal do projeto basta abrir o prompt de comando e executar `npm install` para instalar as todas dependências, após isso execute `ng s --o` para execução da aplicação.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :camera: Screenshots
 
-## Running end-to-end tests
+### Home
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/home.png"/></p>
 
-## Further help
+### Dashboard
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/dashboard.png"/></p>
+
+### Lista de Categorias
+
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/categorias.png"/></p>
+
+### Cadastro de Categoria
+
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/cadastro-categoria.png"/></p>
+
+### Lista de Produtos
+
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/produtos.png"/></p>
+
+### Cadastro de Produto
+
+<p align="center"> <img src="https://github.com/pauloamjdeveloper/angular-controle-de-estoque/blob/master/src/assets/cadastro-produto.png"/></p>
+
+## Author
+:boy: [Paulo Alves](https://github.com/pauloamjdeveloper)
