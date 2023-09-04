@@ -12,7 +12,7 @@ import { SaleProductResponse } from 'src/app/models/interfaces/products/response
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
   private API_URL = environment.API_URL;
@@ -24,7 +24,7 @@ export class ProductsService {
     }),
   };
 
-  constructor(private http: HttpClient, private cookie: CookieService) { }
+  constructor(private http: HttpClient, private cookie: CookieService) {}
 
   getAllProducts(): Observable<Array<GetAllProductsResponse>> {
     return this.http

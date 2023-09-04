@@ -7,7 +7,7 @@ import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/resp
 @Component({
   selector: 'app-categories-table',
   templateUrl: './categories-table.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class CategoriesTableComponent {
   @Input() public categories: Array<GetCategoriesResponse> = [];
@@ -19,7 +19,7 @@ export class CategoriesTableComponent {
 
   handleDeleteCategoryEvent(category_id: string, categoryName: string): void {
     if (category_id !== '' && categoryName !== '') {
-      this.deleteCategoryEvent.emit({ category_id, categoryName});
+      this.deleteCategoryEvent.emit({ category_id, categoryName });
     }
   }
 

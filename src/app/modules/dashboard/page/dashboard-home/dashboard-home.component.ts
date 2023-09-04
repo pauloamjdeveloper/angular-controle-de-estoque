@@ -9,7 +9,7 @@ import { ProductsDataTransferService } from 'src/app/shared/services/products/pr
 @Component({
   selector: 'app-dashboard-home',
   templateUrl: './dashboard-home.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class DashboardHomeComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
@@ -29,7 +29,8 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
   }
 
   getProductsDatas(): void {
-    this.productsService.getAllProducts()
+    this.productsService
+    .getAllProducts()
     .pipe(takeUntil(this.destroy$))
       .subscribe({
       next: (response) => {
@@ -77,9 +78,9 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
         plugins: {
           legend: {
             labels: {
-              color: textColor
-            }
-          }
+              color: textColor,
+            },
+          },
         },
 
         scales: {
@@ -88,11 +89,11 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
               color: textColorSecondary,
               font: {
                 weight: '500',
-              }
+              },
             },
             grid: {
-              color: surfaceBorder
-            }
+              color: surfaceBorder,
+            },
           },
           y: {
             ticks: {
@@ -100,10 +101,10 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
             },
             grid: {
               color: surfaceBorder,
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      };
     }
   }
 

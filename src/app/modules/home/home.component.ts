@@ -31,7 +31,7 @@ export class HomeComponent implements OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private coockieService: CookieService,
+    private cookieService: CookieService,
     private messageService: MessageService,
     private router: Router
   ) {}
@@ -43,7 +43,7 @@ export class HomeComponent implements OnDestroy {
        .subscribe({
         next: (response) => {
           if (response) {
-            this.coockieService.set('USER_INFO', response?.token);
+            this.cookieService.set('USER_INFO', response?.token);
             this.loginForm.reset();
             this.router.navigate(['/dashboard']);
 

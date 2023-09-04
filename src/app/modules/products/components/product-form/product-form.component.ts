@@ -117,14 +117,14 @@ export class ProductFormComponent implements OnInit, OnDestroy {
             }
           },
           error: (err) => {
-            console.log(err)
+            console.log(err);
             this.messageService.add({
               severity: 'error',
               summary: 'Erro',
               detail: 'Erro ao criar produto!',
               life: 2500,
             });
-          }
+          },
         });
     }
 
